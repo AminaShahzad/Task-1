@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 int converter(dec){
-    static res[50];
+    static res[32];
     static  i =0;
     while(1){
 
