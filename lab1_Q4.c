@@ -1,36 +1,26 @@
 #include<stdio.h>
-int dec,rem,ans=1,c=0;
- int myFunction(dec){
-    if(dec>1 && dec%2 == 0){
-        rem =0;
+
+int converter(dec){
+    static res[50];
+    static  i =0;
+    while(1){
+
+    res[i]=dec%2;
+    if(dec ==1){
+            for(int j =i;j>=0;j--){
+                printf("%d",res[j]);
+            }
+        return res;
     }
-    else{
-        rem =1;
-    }
-    ans = ans*10+rem;
-    dec=dec/2;
-    if (dec==1){
-        rem= 01;
+    dec=((dec/2));
+    i++;}
 
-        ans = ans*10+ rem;
-
-        while(ans!=1){
-        int digit =ans%10;
-
-        printf("%d",digit);
-        ans /=10;
-    }}
-    else{
-        myFunction(dec);
-
-    }
-
- }
+}
 int main(){
-    printf("Enter a decimal number:\n");
-    scanf("%d",&dec);
+    int dec,len;
+printf("enter number:");
+scanf("%d",&dec);
+converter(dec);
+return 0;
 
-    myFunction(dec);
-
-    return 0;
 }
